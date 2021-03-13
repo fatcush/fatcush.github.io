@@ -1,0 +1,175 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #0d1321;
+  color: #ffeddf;
+}
+
+.hero {
+  display: grid;
+  grid-gap: 0.3rem;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)),
+    url(./cranium-cleaners.png);
+  height: 30rem;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.hero-header {
+  font-size: 4em;
+  font-family: "Mukta", sans-serif;
+  color: white;
+  align-self: end;
+  margin-left: 2rem;
+}
+
+.hero-subhead {
+  font-family: "Josefin Slab", serif;
+  color: white;
+  margin-left: 2.5rem;
+  align-self: start;
+}
+
+.about {
+  display: grid;
+  column-gap: 3rem;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-areas:
+    "a b"
+    "c b";
+  padding: 3rem;
+}
+
+.about-header {
+  font-size: 3rem;
+  font-family: "Mukta", sans-serif;
+  margin-left: 3rem;
+  grid-area: a;
+}
+
+.about-img {
+  grid-area: b;
+  justify-self: center;
+}
+.about-text {
+  font-family: "Tenor Sans", sans-serif;
+  margin-left: 3rem;
+  grid-area: c;
+}
+
+.about-text_1 {
+  margin-bottom: 0.5rem;
+}
+
+.services {
+  display: grid;
+  justify-items: center;
+  padding: 2rem;
+  margin-bottom: 1rem;
+}
+
+.services-header {
+  font-size: 3rem;
+  font-family: "Mukta", sans-serif;
+  margin-bottom: 1rem;
+}
+
+.services-list {
+  display: flex;
+}
+
+.services-list_item {
+  margin: 0 2rem;
+  font-size: 1.5rem;
+  font-family: "Josefin Slab", serif;
+}
+
+.pricing {
+  display: grid;
+  justify-items: center;
+  grid-gap: 1rem;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-areas:
+    "a a a"
+    "b c d"
+    "e e e";
+  padding: 1rem;
+}
+
+.pricing-header {
+  grid-area: a;
+  font-family: "Mukta", sans-serif;
+  font-size: 3rem;
+}
+
+.pricing-option {
+  display: grid;
+  padding: 1rem;
+  margin-bottom: 2rem;
+  width: 15rem;
+  background: #7a7d7d;
+  border-radius: 1%;
+  color: #0d1321;
+  transition: transform 0.4s;
+}
+
+.pricing-option:hover {
+  transform: translate(2px, -2px);
+}
+
+.pricing-option_price {
+  color: #ffc100;
+  font-family: "Josefin Slab", serif;
+}
+
+.pricing-option_header {
+  font-family: "Mukta", sans-serif;
+}
+
+.pricing-option_1 {
+  grid-area: b;
+  justify-self: end;
+}
+.pricing-option_2 {
+  grid-area: c;
+}
+.pricing-option_3 {
+  grid-area: d;
+  justify-self: start;
+}
+
+.pricing-custom-quote {
+  grid-area: e;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  justify-self: center;
+}
+
+.pricing-custom-quote_header {
+  font-family: "Mukta", sans-serif;
+  margin-bottom: 1rem;
+}
+
+.pricing-custom-quote_text {
+  font-family: "Tenor Sans", sans-serif;
+  margin-bottom: 2rem;
+}
+
+.pricing-option_header {
+  margin-bottom: 1rem;
+}
+
+.pricing-option_price {
+  margin-bottom: 1rem;
+}
+
+.pricing-option_list-item {
+  font-family: "Tenor Sans", sans-serif;
+  margin: 0.5rem 1rem;
+}
