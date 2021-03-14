@@ -5,10 +5,7 @@
 }
 
 body {
-  background-color: #0d1321;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 800 800'%3E%3Cg %3E%3Ccircle fill='%230d1321' cx='400' cy='400' r='600'/%3E%3Ccircle fill='%230d121f' cx='400' cy='400' r='500'/%3E%3Ccircle fill='%230c111d' cx='400' cy='400' r='400'/%3E%3Ccircle fill='%230b101b' cx='400' cy='400' r='300'/%3E%3Ccircle fill='%230a0e19' cx='400' cy='400' r='200'/%3E%3Ccircle fill='%23090d17' cx='400' cy='400' r='100'/%3E%3C/g%3E%3C/svg%3E");
-  background-attachment: fixed;
-  background-size: cover;
+  
   color: #ffeddf;
 }
 
@@ -40,24 +37,28 @@ body {
   align-self: start;
 }
 
+.wrapper {
+  background-color: #0d1321;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 800 800'%3E%3Cg %3E%3Ccircle fill='%230d1321' cx='400' cy='400' r='600'/%3E%3Ccircle fill='%230d121f' cx='400' cy='400' r='500'/%3E%3Ccircle fill='%230c111d' cx='400' cy='400' r='400'/%3E%3Ccircle fill='%230b101b' cx='400' cy='400' r='300'/%3E%3Ccircle fill='%230a0e19' cx='400' cy='400' r='200'/%3E%3Ccircle fill='%23090d17' cx='400' cy='400' r='100'/%3E%3C/g%3E%3C/svg%3E");
+  background-attachment: fixed;
+  background-size: cover;
+}
+
 .main-content {
   display: grid;
   justify-items: center;
   justify-self: center;
   justify-content: center;
-  grid-template-columns: 80%;
-  grid-template-rows: repeat(3, 1fr);
-  background: #0d1321;
+  grid-template-columns: 75%;
+  /* grid-template-rows: repeat(auto-fit, minmax(50rem, 1fr)); */
 }
 
 .about {
   display: grid;
   justify-content: center;
+  align-content: center;
   row-gap: 1rem;
-  margin-bottom: 5rem;
   grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  grid-template-rows: auto;
-  grid-auto-flow: dense;
   padding: 3rem;
   padding-top: 5rem;
 }
@@ -66,23 +67,18 @@ body {
   font-size: 3rem;
   align-self: center;
   font-family: "Mukta", sans-serif;
-  margin-left: 3rem;
 }
 
 .about-img {
-  width: 60%;
+  width: 65%;
   height: auto;
   justify-self: center;
   align-self: end;
   object-fit: cover;
-  padding: 1rem;
 }
 .about-text {
   font-family: "Tenor Sans", sans-serif;
   align-self: start;
-  margin-left: 3rem;
-  grid-column-start: 1;
-  grid-row-start: 2;
 }
 
 .about-text_1 {
@@ -92,7 +88,7 @@ body {
 .services {
   display: grid;
   justify-items: center;
-  padding: 2rem;
+  padding: 4rem 2rem;
   margin-bottom: 6rem;
 }
 
@@ -118,12 +114,12 @@ body {
   grid-gap: 1rem;
   grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
   grid-template-rows: auto;
-
   padding: 1rem;
 }
 
 .pricing-header {
-  /* grid-area: a; */
+  align-self: end;
+  margin-bottom: 4rem;
   font-family: "Mukta", sans-serif;
   font-size: 3rem;
 }
@@ -189,21 +185,49 @@ body {
   margin: 0.5rem 1rem;
 }
 
+.contact {
+  display: grid;
+  justify-items: center;
+}
+
+.contact-header {
+  margin-bottom: 1.5rem;
+  font-family: "Mukta", sans-serif;
+}
+
+.contact-button {
+  font-family: "Mukta", sans-serif;
+  margin-bottom: 3rem;
+  padding: 1rem;
+  border: none;
+  border-radius: 1%;
+  width: 10rem;
+  background-color: #ffc100;
+}
+
+.contact-button:hover {
+  background-color: white;
+}
+
+.hidden {
+  position: absolute;
+  z-index: -100;
+}
+
 @media screen and (min-width: 1024px) {
   .about-img {
-    grid-row: span 2;
     align-self: start;
     margin-bottom: 2rem;
   }
 }
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 775px) {
   .pricing {
     display: grid;
     justify-items: center;
     grid-gap: 1rem;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 1fr);
+    /* grid-template-rows: repeat(3, 1fr); */
     padding: 1rem;
   }
 
@@ -220,9 +244,34 @@ body {
 }
 
 @media screen and (max-width: 730px) {
+  h2 {
+    line-height: 1em;
+  }
+
+  .about-header {
+    margin-bottom: 3rem;
+  }
+
+  .about-img {
+    grid-row: span 2;
+    align-self: start;
+    padding: 0;
+    width: 100%;
+    height: auto;
+  }
+
+  .services {
+    height: 30rem;
+    margin-bottom: 5rem;
+    padding-bottom: 2rem;
+    justify-content: center;
+  }
+
   .services-list {
     display: flex;
     flex-direction: column;
+    align-self: center;
+    margin-bottom: 2rem;
   }
 
   .pricing {
@@ -231,10 +280,6 @@ body {
     grid-gap: 1rem;
     grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
     grid-template-rows: auto;
-    /* grid-template-areas:
-      "a a a"
-      "b c d"
-      "e e e"; */
     padding: 1rem;
   }
 
